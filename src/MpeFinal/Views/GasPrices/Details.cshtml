@@ -1,0 +1,33 @@
+@model MpeFinal.Models.GasPrice
+
+@{
+	ViewData["Title"] = "Podrobno";
+}
+<article class="row body-content">
+	<div class="col-md-offset-3 col-md-6">
+		<h2>Podrobno</h2>
+
+		<div>
+			<h4>Cena plina</h4>
+			<hr />
+			<dl class="dl-horizontal">
+				<dt>
+					@Html.DisplayNameFor(model => model.GDate)
+				</dt>
+				<dd>
+					@Html.DisplayFor(model => model.GDate)
+				</dd>
+				<dt>
+					@Html.DisplayNameFor(model => model.GPrice)
+				</dt>
+				<dd>
+					@Html.DisplayFor(model => model.GPrice)
+				</dd>
+			</dl>
+		</div>
+		<p>
+			<a asp-action="Edit" asp-route-id="@Model.Id">Uredi</a> |
+			<a asp-action="Index">Nazaj na seznam</a>
+		</p>
+	</div>
+</article>

@@ -1,0 +1,31 @@
+@model MpeFinal.Models.ApplicationUser
+
+@{
+  ViewData["Title"] = "Izbris";
+}
+
+<article class="row body-content">
+  <div class="col-sm-offset-3 col-sm-6">
+    <h3>Izbris uporabnika</h3>
+
+    <div>
+      <h4>Si prepri&#269;an da &#382;eli&#353; izbrisati?</h4>
+      <hr />
+      <dl class="dl-horizontal">
+        <dt>
+          @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+          @Html.DisplayFor(model => model.Email)
+        </dd>
+      </dl>
+
+      <form asp-action="Delete">
+        <div class="form-actions no-color">
+          <input type="submit" value="Izbri&#353;i" class="btn btn-default" /> |
+          <a asp-action="Index">Nazaj na seznam</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</article>

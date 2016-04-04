@@ -1,0 +1,48 @@
+﻿@{
+  ViewData["Title"] = "Grafi";
+}
+
+<article id="contain" class="row body-content article-content"></article>
+
+<article class="row body-content article-content">
+  <div class="col-lg-offset-2 col-lg-2 col-md-6">
+    <h3>Graf uporabe</h3>
+    @using (Html.BeginForm("GasUtilization", "Gases", FormMethod.Get, new
+    {
+      id = "executeBtn",
+      data_ajax = "true",
+      data_ajax_method = "GET",
+      data_ajax_mode = "replace",
+      data_ajax_update = "#contain1",
+      @class = "form-horizontal body-content"
+    }))
+    {<div class="form-group form-inline">
+      <label for="startDate" class="control-label">Od</label>
+      <input type="date" id="startDate" name="StartDate" placeholder="dd.mm.llll" class="form-control" required>
+    </div>
+    <div class="form-group form-inline">
+      <label for="endDate" class="control-label">Do</label>
+      <input type="date" id="endDate" name="EndDate" placeholder="dd.mm.llll" class="form-control">
+    </div>
+    <div class="form-group">
+      <input name="executeBtn" type="submit" value="Poizvedi" class="btn btn-default" />
+    </div>
+    }
+  </div>
+
+  <div id="contain1" class="col-lg-8 col-md-6">
+    @section ScriptsPartial {
+      @{
+        await Html.RenderPartialAsync("_GasUtilization");
+      }
+    }
+  </div>
+</article>
+
+@section Scripts {
+  <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+  <script src="~/lib/highcharts/highstock.js"></script>
+  <script src="~/lib/highcharts/modules/exporting.js"></script>
+  <script src="~/js/graphProduction.js"></script>
+}
+

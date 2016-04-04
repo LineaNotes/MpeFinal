@@ -1,0 +1,34 @@
+@model MpeFinal.ViewModels.UserRoleViewModel
+
+@{
+  ViewData["Title"] = "Podrobno";
+}
+
+<article class="row body-content">
+  <div class="col-md-offset-3 col-md-6">
+    <h2>Podrobno</h2>
+
+    <div>
+      <h4>Uporabnik</h4>
+      <hr />
+      <dl class="dl-horizontal">
+        <dt>
+          @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+        <dd>
+          @Html.DisplayFor(model => model.User.Email)
+        </dd>
+        <dt>
+          @Html.DisplayNameFor(model => model.Roles)
+        </dt>
+        <dd>
+          @Html.DisplayFor(model => model.Roles)
+        </dd>
+      </dl>
+    </div>
+    <p>
+      <a asp-controller="Auth" asp-action="Edit" asp-route-id="@Model.User.Id">Uredi</a> |
+      <a asp-action="Index">Nazaj na seznam</a>
+    </p>
+  </div>
+</article>

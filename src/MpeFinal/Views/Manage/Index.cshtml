@@ -1,0 +1,28 @@
+﻿@model IndexViewModel
+@{
+  ViewData["Title"] = "Upravljaj z ra&#269;unom";
+}
+
+<article class="row body-content">
+  <div class="col-sm-offset-3 col-sm-6">
+    <p class="text-success">@ViewData["StatusMessage"]</p>
+
+    <div>
+      <h3>Spremeni nastavitve ra&#269;una</h3>
+      <hr />
+      <dl class="dl-horizontal">
+        <dt>Geslo:</dt>
+        <dd>
+          @if (Model.HasPassword)
+          {
+            <text>[&nbsp;&nbsp;<a asp-controller="Manage" asp-action="ChangePassword">Spremeni</a>&nbsp;&nbsp;]</text>
+          }
+          else
+          {
+            <text>[&nbsp;&nbsp;<a asp-controller="Manage" asp-action="SetPassword">Ustvari</a>&nbsp;&nbsp;]</text>
+          }
+        </dd>
+      </dl>
+    </div>
+  </div>
+</article>
