@@ -16,14 +16,19 @@
         <div class="form-group">
           <label asp-for="GDate" class="col-md-2 control-label"></label>
           <div class="col-md-10">
-            <input asp-for="GDate" class="form-control" />
+            <input asp-for="GDate" class="form-control"
+                   data-val-required="To polje je obvezno."
+                   data-val-date="Prosimo vnesite veljaven datum." />
             <span asp-validation-for="GDate" class="text-danger" />
           </div>
         </div>
         <div class="form-group">
           <label asp-for="GPrice" class="col-md-2 control-label"></label>
           <div class="col-md-10">
-            <input asp-for="GPrice" class="form-control" />
+            <input asp-for="GPrice" class="form-control"
+                   data-val-required="To polje je obvezno."
+                   data-val-number="Prosimo vnesite veljavno &#353;tevilo."
+                   data-val-range="Prosimo vnesite vrednost med {0} in {1}." />
             <span asp-validation-for="GPrice" class="text-danger" />
           </div>
         </div>
@@ -42,8 +47,8 @@
 </article>
 
 @section Scripts {
-  <script src="~/lib/jquery/dist/jquery.min.js"></script>
-  <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-  <script src="~/js/customvalidator.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/customvalidator.js"></script>
 }

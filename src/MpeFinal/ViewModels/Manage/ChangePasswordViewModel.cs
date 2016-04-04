@@ -17,7 +17,7 @@ namespace MpeFinal.ViewModels.Manage
 
     [DataType(DataType.Password)]
     [Display(Name = "Confirm new password")]
-    [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+    [Compare("NewPassword", ErrorMessage = "Geslo in potrditveno geslo se ne ujemata.")]
     public string ConfirmPassword { get; set; }
   }
 }

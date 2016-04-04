@@ -4,20 +4,26 @@
 {
   <form asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a asp-controller="Gases" asp-action="Index">Poizvedbe</a>
-      </li>
-      <li>
-        <a asp-controller="Gases" asp-action="Graphs">Grafi</a>
-      </li>
+      @if (!User.IsInRole("tajnik"))
+      {
+        <li>
+          <a asp-controller="Gases" asp-action="Index">Poizvedbe</a>
+        </li>
+        <li>
+          <a asp-controller="Gases" asp-action="Graphs">Grafi</a>
+        </li>
+        @if (User.IsInRole("administrator"))
+        {
+          <li>
+            <a asp-controller="Auth" asp-action="Index">Admin</a>
+          </li>
+          <li>
+            <a asp-controller="Account" asp-action="Register">Registracija</a>
+          </li>
+        }
+      }
       <li>
         <a asp-controller="GasPrices" asp-action="Index">Vnos cene</a>
-      </li>
-      <li>
-        <a asp-controller="Auth" asp-action="Index">Admin</a>
-      </li>
-      <li>
-        <a asp-controller="Account" asp-action="Register">Registracija</a>
       </li>
       <li>
         <a asp-controller="Manage" asp-action="Index" title="Manage">Pozdravljen @User.GetUserName()!</a>
