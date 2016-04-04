@@ -48,7 +48,38 @@
 						valueDecimals: 2
 					}
 				}
-			]
+			],
+
+			rangeSelector: {
+			  selected: 1,
+			  buttonSpacing: 30,
+			  buttons: [{
+			    type: 'week',
+			    count: 1,
+			    text: '1t',
+			    width: 150
+			  }, {
+			    type: '1m',
+			    count: 1,
+			    text: '1m'
+			  }, {
+			    type: 'month',
+			    count: 3,
+			    text: '3m '
+			  }, {
+			    type: 'month',
+			    count: 6,
+			    text: '6m '
+			  }, {
+			    type: 'year',
+			    count: 1,
+			    text: '1l '
+			  }, {
+			    type: 'ytd',
+			    count: 3,
+			    text: 'ldd'
+			  }]
+			}
 		});
 	});
 
